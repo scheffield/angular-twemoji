@@ -33,8 +33,6 @@ angular.module('sc.twemoji', [])
   }])
   .filter('twemoji', ['twemoji', function (twemoji) {
     return function (toParse) {
-      console.log('filter:', toParse);
-      console.log(twemoji(toParse));
       return twemoji(toParse);
     };
   }])

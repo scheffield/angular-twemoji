@@ -99,6 +99,10 @@ app.config('twemojiProvider', function(twemojiProvider) {
 });
 ```
 
+## Further reading
+
+See my blog post [Twemojis with AngularJS](http://www.digitalme.co/blog/twemojis-with-angularjs).
+
 ## Acknowledgments
 Based on [twemoji](https://github.com/twitter/twemoji).
 
