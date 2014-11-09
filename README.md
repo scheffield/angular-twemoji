@@ -10,7 +10,7 @@ A simple angular wrapper around the great [twemoji](https://github.com/twitter/t
  - Download the [production version][min] or the [development version][max]
  - via **[Bower](http://bower.io/)**: by running `$ bower install angular-twemoji` from your console
 1. Include `angular-twemoji.min.js` (or `angular-twemoji.js`) in your `index.html`, after including Angular itself.
-1. Get and include [twemoji.min.js][parser_min] or [twemoji.js][parser_max].
+1. Get and include [twemoji.min.js][parser_min] or [twemoji.js][parser_max] running `$ bower install twemoji`.
 1. Add `sc.twemoji` to your main module's list.
 
 [min]: https://raw.github.com/scheffield/angular-twemoji/master/dist/angular-twemoji.min.js
