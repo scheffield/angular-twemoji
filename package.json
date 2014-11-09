@@ -46,5 +46,8 @@
     "karma-spec-reporter": "~0.0.13",
     "jasmine-reporters": "~2.0.0",
     "karma-coverage": "~0.2.4"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }

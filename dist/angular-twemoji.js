@@ -1,6 +1,6 @@
 /**
  * angular-twemoji
- * @version v0.0.4 - 2014-11-09
+ * @version v0.0.6 - 2014-11-09
  * @link https://github.com/scheffield/angular-twemoji
  * @author  <scheffield@gmail.com>
  * @license MIT License, http://www.opensource.org/licenses/MIT
