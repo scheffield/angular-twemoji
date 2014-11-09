@@ -185,8 +185,8 @@ module.exports = function(grunt) {
           'bower.json',
           '<%= yo.dist %>/<%= pkg.name %>.js',
           '<%= yo.dist %>/<%= pkg.name %>.min.js'
-        ] // '-a' for all files
-        //pushTo: 'origin'
+        ], // '-a' for all files
+        pushTo: 'origin'
       }
     }
   });
