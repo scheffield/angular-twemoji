@@ -32,11 +32,13 @@ module.exports = function(grunt) {
       ' * @license MIT License, http://www.opensource.org/licenses/MIT\n' +
       ' */\n'
     },
+
     open: {
       server: {
         path: 'http://localhost:<%= connect.options.port %>'
       }
     },
+
     clean: {
       dist: {
         files: [{
@@ -50,6 +52,7 @@ module.exports = function(grunt) {
       },
       server: '.tmp'
     },
+
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -74,6 +77,7 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       }
     },
+
     connect: {
       options: {
         port: 9000,
@@ -91,6 +95,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     less: {
       options: {
         // dumpLineNumbers: 'all',
@@ -102,6 +107,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     jshint: {
       gruntfile: {
         options: {
@@ -122,6 +128,7 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       }
     },
+
     karma: {
       options: {
         configFile: 'karma.conf.js',
@@ -134,20 +141,20 @@ module.exports = function(grunt) {
         autoWatch: true
       }
     },
-    ngmin: {
-      options: {
-        banner: '<%= meta.banner %>'
-      },
+
+    // Allow the use of non-minsafe AngularJS files. Automatically makes it
+    // minsafe compatible so Uglify does not destroy the ng references
+    ngAnnotate: {
       dist: {
-        src: ['<%= yo.src %>/<%= pkg.name %>.js'],
-        dest: '<%= yo.dist %>/<%= pkg.name %>.js'
+        files: [{
+          expand: true,
+          cwd: '.tmp/concat',
+          src: '*/**.js',
+          dest: '.tmp/concat'
+        }]
       }
-      // dist: {
-      //   files: {
-      //     '/.js': '/.js'
-      //   }
-      // }
     },
+
     concat: {
       options: {
         banner: '<%= meta.banner %>',
@@ -158,6 +165,7 @@ module.exports = function(grunt) {
         dest: '<%= yo.dist %>/<%= pkg.name %>.js'
       }
     },
+
     uglify: {
       options: {
         banner: '<%= meta.banner %>'
@@ -177,7 +185,8 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'less:dist',
-    'ngmin:dist',
+    'concat',
+    'ngAnnotate:dist',
     'uglify:dist'
   ]);
 
