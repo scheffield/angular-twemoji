@@ -174,6 +174,20 @@ module.exports = function(grunt) {
         src: '<%= concat.dist.dest %>',
         dest: '<%= yo.dist %>/<%= pkg.name %>.min.js'
       }
+    },
+
+    bump: {
+      options: {
+        files: ['bower.json','package.json'],
+        commit: true,
+        commitFiles: [
+          'package.json',
+          'bower.json',
+          '<%= yo.dist %>/<%= pkg.name %>.js',
+          '<%= yo.dist %>/<%= pkg.name %>.min.js'
+        ] // '-a' for all files
+        //pushTo: 'origin'
+      }
     }
   });
 
