@@ -1,6 +1,6 @@
-# Angular Twemoji
+# Angular Twemoji &nbsp; [![Build Status](https://travis-ci.org/scheffield/angular-twemoji.svg)](https://travis-ci.org/scheffield/angular-twemoji)
 
-A simple angular wrapper around the great [twemoji](https://github.com/twitter/twemoji) project. It provides a ```TwemojiProvider``` a directive and a filter.
+A simple angular wrapper around the great [twemoji](https://github.com/twitter/twemoji) project. It provides a `twemojiProvider` a directive and a filter.
 
 [![get this with bower](http://benschwarz.github.io/bower-badges/badge@2x.png)](http://bower.io/ "get this with bower")
 
@@ -27,6 +27,16 @@ In your `index.html`:
 <script src="bower_components/twemoji/twemoji.js"></script>
 
 <script src="bower_components/angular-twemoji/dist/angular-twemoji.js"></script>
+```
+
+In your `app.js`:
+
+```js
+angular
+    .module('myApp', [
+        // ...
+        'sc.twemoji'
+    ]);
 ```
 
 ### As directive
@@ -64,3 +74,36 @@ app.controller('myCtrl', ['twemoji', function(twemoji) {
 ```
 
 ## Configuration
+
+For the full documentation of all options please refer to [twemoji](https://github.com/twitter/twemoji#object-as-parameter). If you like to override the default configuration use the `twemojiProvider` as follows:
+
+```js
+app.config('twemojiProvider', function(twemojiProvider) {
+  twemojiProvider.setOptions({
+    base: string,         // default MaxCDN
+    ext: string,          // default ".png"
+    className: string,    // default "emoji"
+    size: string|number,  // default "36x36"
+    folder: string,       // in case it's specified
+                          // it replaces .size info, if any
+    callback: function imageSourceGenrator(icon, options) {
+      return ''.concat(
+        options.base, // by default Twitter Inc. CDN
+        options.size, // by default "36x36" string
+        '/',
+        icon,         // the found emoji as code point
+        options.ext   // by default ".png"
+      );
+    }
+  });
+});
+```
+
+## Acknowledgments
+Based on [twemoji](https://github.com/twitter/twemoji).
+
+## License
+
+Copyright (c) 2014 Max Scheffler
+
+[MIT License](http://en.wikipedia.org/wiki/MIT_License)
