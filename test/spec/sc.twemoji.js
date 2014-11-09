@@ -23,11 +23,14 @@ describe('Module: sc.twemoji', function () {
     'default': {
       scope: {},
       element: '<div twemoji>hello world</div>'
+    },
+    'simpleEmojiContent': {
+      element: '<div twemoji>I \u2764\uFE0F emoji!</div>'
     }
   };
 
   function compileDirective(template) {
-    template = template ? templates[template] : templates['default'];
+    template = angular.isObject(template) ? template : templates[template || 'default'];
     angular.extend(scope, template.scope || templates['default'].scope);
     var $element = $(template.element).appendTo($sandbox);
     $element = $compile($element)(scope);
@@ -35,9 +38,14 @@ describe('Module: sc.twemoji', function () {
     return $element;
   }
 
-  it('should correctly display hello world', function () {
+  it('should correctly display content without emojis', function () {
     var elm = compileDirective();
     expect(elm.text()).toBe('hello world');
+  });
+
+  it('should decorate content with emojis', function() {
+    var elm = compileDirective(templates.simpleEmojiContent);
+    expect(elm.html()).toContain('<img');
   });
 
 });
