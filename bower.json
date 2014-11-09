@@ -1,6 +1,6 @@
 {
-  "name": "sc.twemoji",
-  "version": "0.0.1",
+  "name": "angular-twemoji",
+  "version": "0.0.2",
   "dependencies": {
   },
   "devDependencies": {

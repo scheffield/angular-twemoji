@@ -1,20 +1,21 @@
 {
-  "name": "sc.twemoji",
-  "version": "0.0.5",
-  "description": "sc.twemoji",
+  "name": "angular-twemoji",
+  "version": "0.0.2",
+  "description": "angular-twemoji",
   "keywords": [
-    "angular"
+    "angular",
+    "twemoji"
   ],
-  "homepage": "https://github.com/scheffield/sc.twemoji",
-  "bugs": "https://github.com/scheffield/sc.twemoji/issues",
+  "homepage": "https://github.com/scheffield/angular-twemoji",
+  "bugs": "https://github.com/scheffield/angular-twemoji/issues",
   "author": {
     "name": "",
-    "email": "scheffield@googlemail.com",
+    "email": "scheffield@gmail.com",
     "url": "https://github.com/scheffield"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/scheffield/sc.twemoji.git"
+    "url": "git://github.com/scheffield/angular-twemoji.git"
   },
   "licenses": [
     {
