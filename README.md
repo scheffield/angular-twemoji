@@ -1,4 +1,4 @@
-# Angular Twemoji &nbsp; [![Build Status](https://travis-ci.org/scheffield/angular-twemoji.svg)](https://travis-ci.org/scheffield/angular-twemoji)
+# Angular Twemoji &nbsp; [![Build Status](https://travis-ci.org/scheffield/angular-twemoji.svg)](https://travis-ci.org/scheffield/angular-twemoji)&nbsp;[![Bower version](https://badge.fury.io/bo/angular-twemoji.svg)](http://badge.fury.io/bo/angular-twemoji)
 
 A simple angular wrapper around the great [twemoji](https://github.com/twitter/twemoji) project. It provides a `twemojiProvider` a directive and a filter.
 
