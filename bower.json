@@ -1,6 +1,7 @@
 {
   "name": "angular-twemoji",
   "version": "0.0.7",
+  "main": "dist/angular-twemoji.min.js",
   "dependencies": {
   },
   "devDependencies": {
